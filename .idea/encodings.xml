@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/activate.php" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/php_service/activate_query.php" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/php_service/panel_admin.php" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/php_service/panel_admin_class.php" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/php_service/panel_admin_score.php" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/php_service/panel_admin_student.php" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/php_service/panel_admin_user.php" charset="GB2312" />
+  </component>
+</project>
