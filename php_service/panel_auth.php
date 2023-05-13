@@ -19,22 +19,22 @@ function panel_admin_auth(): void
             $_SESSION["count"] = 0;
         } else {
             $auth = $_SESSION["auth"];
-            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&auth=$auth&detail=No Permission&loc=panel_admin_auth\">");
+            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&auth=$auth&detail=No Permission&loc=panel_admin_auth\">");
         }
     } else {
         if(!isset($_SESSION["count"]))
         {
             $_SESSION["count"] = 1;
             $count = $_SESSION["count"];
-            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=No Session Info&loc=panel_admin_auth:22&count=$count\">");
+            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=No Session Info&loc=panel_admin_auth:22&count=$count\">");
         }else{
             if($_SESSION["count"]>=3)
             {
-                die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=Banned Session,too many tries&loc=panel_admin_auth:26\">");
+                die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=Banned Session,too many tries&loc=panel_admin_auth:26\">");
             }else{
                 $_SESSION["count"] = $_SESSION["count"] + 1;
                 $count = $_SESSION["count"];
-                die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=No Session Info&loc=panel_admin_auth:30&count=$count\">");
+                die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=No Session Info&loc=panel_admin_auth:30&count=$count\">");
             }
         }
     }

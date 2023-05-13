@@ -240,7 +240,7 @@ EOA;
                             }
                             $temp = $j[$i-4];
                             echo "<td>";
-                            echo "<a href=\"$server_addrr/php1/php_service/panel_admin_user.php?choose_userinfo_username=$temp&choose_userinfo_username_status=1#one_rec\" class=\"button primary\">修改</a>";
+                            echo "<a href=\"$server_addrr/public/php_service/panel_admin_user.php?choose_userinfo_username=$temp&choose_userinfo_username_status=1#one_rec\" class=\"button primary\">修改</a>";
                             echo "</td>";
                             $i++;
                             echo "</tr>";
@@ -285,7 +285,7 @@ EOA;
                         }
                         $temp = $j[$i-4];
                         echo "<td>";
-                        echo "<a href=\"$server_addrr/php1/php_service/panel_admin_user.php?choose_userinfo_username=$temp&choose_userinfo_username_status=1#one_rec\" class=\"button primary\">修改</a>";
+                        echo "<a href=\"$server_addrr/public/php_service/panel_admin_user.php?choose_userinfo_username=$temp&choose_userinfo_username_status=1#one_rec\" class=\"button primary\">修改</a>";
                         echo "</td>";
                         $i++;
                         echo "</tr>";
@@ -417,7 +417,7 @@ echo <<<INPUT
                         <li><input type="submit" value="提交更改" class="primary" /></li>
                         <li><input type="reset" value="清除" /></li>
 INPUT;
-                        echo "<li><a href=\"$server_addrr/php1/php_service/panel_admin_user.php?delete=$choose_userinfo_username\" class=\"button primary\">删除用户</a></li>";
+                        echo "<li><a href=\"$server_addrr/public/php_service/panel_admin_user.php?delete=$choose_userinfo_username\" class=\"button primary\">删除用户</a></li>";
                     echo "</ul>";
                 echo "</form>";
                 echo "</div>";

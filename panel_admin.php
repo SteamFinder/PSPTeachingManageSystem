@@ -10,10 +10,10 @@ if( isset($_SESSION["auth"])) {
         echo "Session Auth:" . $_SESSION["auth"] . "<br>";
     }else{
         $auth = $_SESSION["auth"];
-        die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&auth=$auth&detail=No Permission&loc=panel_admin\">");
+        die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&auth=$auth&detail=No Permission&loc=panel_admin\">");
     }
 } else {
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=No Session Info&loc=panel_admin\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=No Session Info&loc=panel_admin\">");
 }
 ?>
 <!DOCTYPE html>

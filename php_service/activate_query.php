@@ -30,7 +30,7 @@ if($st_name == odbc_result($rs, "St_Name"))
     }
     if(!empty(odbc_result($rs, "username")))
     {
-        die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/activate.php?info=wrong&detail=用户名已存在&loc=activate_query\">");
+        die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/activate.php?info=wrong&detail=用户名已存在&loc=activate_query\">");
     }
     $pwd = md5($new_password);
     $tsql = new mssql_exec_count
@@ -42,7 +42,7 @@ if($st_name == odbc_result($rs, "St_Name"))
     );
     $tsql->setConnect();
     $tsql->execData();
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/activate.php?info=success&detail=账号激活成功&loc=activate_query\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/activate.php?info=success&detail=账号激活成功&loc=activate_query\">");
 }else{
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/activate.php?info=wrong&detail=学生信息输入错误&loc=activate_query\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/activate.php?info=wrong&detail=学生信息输入错误&loc=activate_query\">");
 }

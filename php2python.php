@@ -34,7 +34,7 @@ if(isset($_SESSION["username"]))
     //准备工作完成
 }else{
     //无权限 返回login.php
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=未登录的用户&loc=跨程序信息传递接口:37\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=未登录的用户&loc=跨程序信息传递接口:37\">");
 }
 ?>
 <!DOCTYPE HTML>
@@ -98,7 +98,7 @@ if($python_loc == "admin_manage_student")
     die("<meta http-equiv=\"refresh\" content=\"0;url=EXACT LOCATION?session_id=$session_id&username=$username&auth=$auth\">");
 }else{
     //改一下提示信息
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=非法的请求&loc=跨程序信息传递接口::唤起Python程序\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=非法的请求&loc=跨程序信息传递接口::唤起Python程序\">");
 }
 //PS:读数据库的一点小问题 中文显示??? 不知道为什么
 //排序规则 Chinese_PRC_CI_AS

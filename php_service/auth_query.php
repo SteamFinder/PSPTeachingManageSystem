@@ -12,7 +12,7 @@ if(isset($_GET["session"]) && $_GET["session"] == "destroy")
 {
     session_destroy();
     //销毁整个session文件
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=success&detail=您已退出登录&loc=auth_query\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=success&detail=您已退出登录&loc=auth_query\">");
 }
 if(!isset($_SESSION["count"]))
 {
@@ -20,7 +20,7 @@ if(!isset($_SESSION["count"]))
 }else{
     if($_SESSION["count"] >= 3)
     {
-        die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=Banned Session,too many tries&loc=auth_query\">");
+        die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=Banned Session,too many tries&loc=auth_query\">");
     }
 }
 //防止直接访问 ↓
@@ -28,7 +28,7 @@ if(!isset($_POST["username"]) || !isset($_POST["password"]))
 {
     $_SESSION["count"] = $_SESSION["count"]+1;
     $count = $_SESSION["count"];
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=No Session Info&loc=auth_query&count=$count\">");
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=No Session Info&loc=auth_query&count=$count\">");
 }
 $username = $_POST["username"];
 $password = md5($_POST["password"]);
@@ -64,7 +64,7 @@ $server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/php1/php_service/panel_admin.php\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/php_service/panel_admin.php\">");
         }
         else if ($auth == 2) {
             $_SESSION["username"] = $username;
@@ -74,7 +74,7 @@ $server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/php1/php_service/panel_teacher.php\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/php_service/panel_teacher.php\">");
         }
         else if ($auth == 3) {
             $_SESSION["username"] = $username;
@@ -84,13 +84,13 @@ $server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/php1/php_service/panel_student.php\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/php_service/panel_student.php\">");
         }else{
             $sql="INSERT INTO User_loginRec (logintime,timezone,ip,isdeny) VALUES ('$LoginDate','$timezone','$ip','Denied')";
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = $_SESSION["count"]+1;
             $count = $_SESSION["count"];
-            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=Incorrect username or password&loc=user_auth&count=$count\">");
+            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=Incorrect username or password&loc=user_auth&count=$count\">");
 //          die("<meta http-equiv=\"refresh\" content=\"0;url=old_login.php/?info=wrong&username=$username&permisson=$auth\">");
         }
