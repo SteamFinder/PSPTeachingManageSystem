@@ -1,4 +1,5 @@
-# I.PSPTeachingManageSystem介绍
+# PSPTeachingManageSystem
+## I.PSPTeachingManageSystem介绍
 使用PHP + SQL Server + Python开发的教务系统
 
 ## II.PHP2Python接口使用说明
