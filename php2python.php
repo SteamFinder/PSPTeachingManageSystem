@@ -81,19 +81,25 @@ if (!$conn) {
     exit("连接失败: " . $conn);
 }
 $sql = "INSERT INTO User_Interface VALUES ('$session_id','$username','$auth')";
-//注意 记得让python程序根据loc判断一下 比如admin_manage_student 是管理员管理学生 auth必须为1管理员 所以此处用python程序判断auth是否==1
+/*
+注意 记得让python程序根据loc判断一下
+比如admin_manage_student 是管理员才能操作的 auth必须为1(管理员) 所以此处用python程序判断auth是否==1
+*/
 $rs = odbc_exec($conn, $sql);
 if (!$rs) {
     exit("SQL 语句错误");
 }
 //传入python的web页面 $python_loc用if判断一下 是去成绩管理还是学生管理 然后唤起真正的url
 //TODO: Exact URL
-if($python_loc == "admin_student_manage")
+if($python_loc == "admin_manage_student")
 {
     die("<meta http-equiv=\"refresh\" content=\"0;url=EXACT LOCATION?session_id=$session_id&username=$username&auth=$auth\">");
-}else if($python_loc == "admin_score_manage"){
+}else if($python_loc == "admin_manage_score"){
     die("<meta http-equiv=\"refresh\" content=\"0;url=EXACT LOCATION?session_id=$session_id&username=$username&auth=$auth\">");
 }else{
-    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=非法的请求&loc=跨程序信息传递接口:97\">");
+    //改一下提示信息
+    die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/php1/login.php?info=wrong&detail=非法的请求&loc=跨程序信息传递接口::唤起Python程序\">");
 }
+//PS:读数据库的一点小问题 中文显示??? 不知道为什么
+//排序规则 Chinese_PRC_CI_AS
 ?>
