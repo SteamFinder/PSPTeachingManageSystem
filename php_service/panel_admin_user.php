@@ -2,7 +2,7 @@
 //  Æô¶¯»á»°
 require_once 'panel_auth.php';
 panel_admin_auth();
-$server_addrr = "http://localhost:" . $_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:" . $_SERVER["SERVER_PORT"];
 require 'mssql_exec_count.php';
 header('Content-type:text/html;charset=gb2312');
 if(isset($_GET["choose_userinfo_username"]))

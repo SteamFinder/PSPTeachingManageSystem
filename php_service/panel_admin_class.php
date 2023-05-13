@@ -2,7 +2,7 @@
 //  启动会话
 require_once 'panel_auth.php';
 panel_admin_auth();
-$server_addrr = "http://localhost:" . $_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:" . $_SERVER["SERVER_PORT"];
 require 'mssql_exec_count.php';
 //这里是接收查询区的post数据 从<form>表单传递
 //c_id

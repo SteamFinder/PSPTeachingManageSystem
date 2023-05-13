@@ -1,7 +1,7 @@
 <?php
 //真正需要GET传入的只有python_loc 即到底要去哪个python页面
 //设置SERVER地址 生产环境可替换
-$server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
 //启动会话
 session_start();
 //从session中读取username auth

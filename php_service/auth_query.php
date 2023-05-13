@@ -6,7 +6,7 @@
 //login.php输入账号密码 ->
 //auth_query.php验证账号密码并给予权限($_SESSION["auth"])/记录错误次数($_SESSION["count"]) ->
 //auth_query.php根据权限组跳转对应的panel_权限组.php
-$server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
 session_start();
 if(isset($_GET["session"]) && $_GET["session"] == "destroy")
 {
@@ -36,7 +36,7 @@ date_default_timezone_set("Asia/Shanghai");
 $LoginDate = date("Y/m/d G:i:s");
 $timezone = date("e - ") . "GMT" . date("P");
 $ip = $_SERVER['REMOTE_ADDR'];
-$server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
 //  使用MD5加密
 //  启动Session
 //  声明一个名为 auth 的变量，并赋空值

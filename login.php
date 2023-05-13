@@ -7,7 +7,7 @@ isset($_GET['auth'])?$auth = $_GET['auth']:$auth = "NULL";
 isset($_GET['detail'])?$detail = $_GET['detail']:$detail = NULL;
 isset($_GET['loc'])?$loc = $_GET['loc']:$loc = "NULL";
 if(isset($_GET["count"])){$count = $_GET["count"];}else{$count = NULL;}
-$server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
 ?>
 <!DOCTYPE HTML>
 <!--

@@ -1,5 +1,5 @@
 <?php
-$server_addrr = "http://localhost:".$_SERVER["SERVER_PORT"];
+$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
 //错误详细信息
 //info 标识错误 auth 标识权限组 detail 错误原因
 isset($_GET['info'])?$info = $_GET['info']:$info = NULL;
