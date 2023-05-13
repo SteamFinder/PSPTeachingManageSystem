@@ -3,7 +3,7 @@
 require_once 'panel_auth.php';
 require 'mssql_exec_count.php';
 panel_admin_auth();
-$server_addrr = "0.0.0.0:" . $_SERVER["SERVER_PORT"];
+$server_addrr = NULL;
 header('Content-type:text/html;charset=gb2312');
 //query_username
 //query_auth

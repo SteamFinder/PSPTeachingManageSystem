@@ -7,7 +7,7 @@ isset($_GET['auth'])?$auth = $_GET['auth']:$auth = "NULL";
 isset($_GET['detail'])?$detail = $_GET['detail']:$detail = NULL;
 isset($_GET['loc'])?$loc = $_GET['loc']:$loc = "NULL";
 if(isset($_GET["count"])){$count = $_GET["count"];}else{$count = NULL;}
-$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
+$server_addrr = NULL;
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -37,7 +37,7 @@ $server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
         <nav id="nav">
             <ul>
                 <li class="current">
-                    <a href="<?php echo $server_addrr;?>/php1/activate.php">账号激活</a>
+                    <a href="/public/activate.php">账号激活</a>
                 </li>
             </ul>
         </nav>

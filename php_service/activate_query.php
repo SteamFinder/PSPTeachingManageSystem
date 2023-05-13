@@ -6,7 +6,7 @@ isset($_POST['st_name'])?$st_name = $_POST['st_name']:$st_name = NULL;
 isset($_POST['st_sex'])?$st_sex = $_POST['st_sex']:$st_sex = NULL;
 isset($_POST['st_id'])?$st_id = $_POST['st_id']:$st_id = NULL;
 isset($_POST['cl_name'])?$cl_name = $_POST['cl_name']:$cl_name = NULL;
-$server_addrr = "0.0.0.0:".$_SERVER["SERVER_PORT"];
+$server_addrr = NULL;
 require 'mssql_exec_count.php';
 $conn = odbc_connect('MSSQL-Student', 'sa', '123456');
 if (!$conn) {

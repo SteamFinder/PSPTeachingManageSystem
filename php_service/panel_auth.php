@@ -11,7 +11,7 @@ function panel_admin_auth(): void
 {
     session_start();
 //  判断是否登录并鉴权
-    $server_addrr = "0.0.0.0:" . $_SERVER["SERVER_PORT"];
+    $server_addrr = NULL;
     if (isset($_SESSION["auth"]))
     {
         if ($_SESSION["auth"] == 1)
