@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "hello, world"
+    with open("student_profile.html") as f:
+        content = f.read()
+    return content
 
 
-app.run()
+app.run(debug=True)
