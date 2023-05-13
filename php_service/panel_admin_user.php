@@ -154,7 +154,7 @@ if(isset($_GET["update_username_default"]))
         <nav class="navbar">
             <a href="#one">用户管理与查询</a>
             <a href="#add_user_result">添加用户</a>
-            <a href="<?php echo $server_addrr;?>/php1/php_service/panel_admin_user.php" class="logo"><strong>刷新</strong></a>
+            <a href="<?php echo $server_addrr;?>/public/php_service/panel_admin_user.php" class="logo"><strong>刷新</strong></a>
         </nav>
     </header>
 

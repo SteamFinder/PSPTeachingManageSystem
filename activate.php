@@ -55,7 +55,7 @@ header('Content-type:text/html;charset=gb2312');
 
             <!-- Content -->
             <div class="content">
-                <form action="<?php echo $server_addrr;?>/php1/php_service/activate_query.php" method="post">
+                <form action="<?php echo $server_addrr;?>/public/php_service/activate_query.php" method="post">
                     <div class="row gtr-50">
                         <div class="col-6">
                             <input type="text" name="new_username" placeholder="ÓÃ»§Ãû" />

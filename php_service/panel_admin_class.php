@@ -185,7 +185,7 @@ header('Content-type:text/html;charset=gb2312');
         <nav class="navbar">
             <a href="#query">课程管理与查询</a>
             <a href="#add">添加课程</a>
-            <a href="<?php echo $server_addrr;?>/php1/php_service/panel_admin_class.php" class="logo"><strong>刷新</strong></a>
+            <a href="<?php echo $server_addrr;?>/public/php_service/panel_admin_class.php" class="logo"><strong>刷新</strong></a>
         </nav>
     </header>
     <!-- Main -->

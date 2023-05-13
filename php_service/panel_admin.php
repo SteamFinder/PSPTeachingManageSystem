@@ -141,7 +141,7 @@ header('Content-type:text/html;charset=gb2312');
 										<img src="images/pic01.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/php1/php_service/panel_admin_user.php','_blank','width=1000,height=800')">
+                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/public/php_service/panel_admin_user.php','_blank','width=1000,height=800')">
                             用户管理
                         </a></h3>
                     <p>查询用户与更改信息</p>
@@ -153,7 +153,7 @@ header('Content-type:text/html;charset=gb2312');
 										<img src="images/pic02.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/php1/php_service/panel_admin_class.php','_blank','width=1000,height=800')">
+                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/public/php_service/panel_admin_class.php','_blank','width=1000,height=800')">
                             课程管理
                         </a></h3>
                     <p>查询课程与更改课程信息</p>
@@ -164,7 +164,7 @@ header('Content-type:text/html;charset=gb2312');
 										<img src="images/pic03.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/php1/php2python.php?python_loc=admin_manage_student','_blank','width=1000,height=800')">
+                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/public/php2python.php?python_loc=admin_manage_student','_blank','width=1000,height=800')">
                             学生管理
                         </a></h3>
                     <p>查询学生与更改信息</p>
@@ -175,7 +175,7 @@ header('Content-type:text/html;charset=gb2312');
 										<img src="images/pic04.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/php1/php2python.php?python_loc=admin_manage_score','_blank','width=1000,height=800')">
+                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/public/php2python.php?python_loc=admin_manage_score','_blank','width=1000,height=800')">
                             成绩管理
                         </a></h3>
                     <p>查询成绩与更改信息</p>
