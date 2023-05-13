@@ -1,5 +1,5 @@
 # PSPTeachingManageSystem
-***
+Created On 2023 April
 ## I.PSPTeachingManageSystem介绍
 使用PHP + SQL Server + Python开发的教务系统
 
