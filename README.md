@@ -11,6 +11,10 @@ Created On 2023 April
 
 ![MSSQL](https://img.shields.io/badge/SQL%20Server-2019-lightgrey?style=flat-square&logo=microsoftsqlserver)
 
+PHP运行阶段简图
+
+![readme-main](/assets/readme-main.png)
+
 ## II.职责分配
 1. SteamFinder
 -  登录页面
