@@ -2,8 +2,17 @@
 Created On 2023 April
 ## I.PSPTeachingManageSystem介绍
 使用PHP + SQL Server + Python开发的教务系统
+
+![Windows](https://img.shields.io/badge/Windows-11-blue?style=flat-square&logo=windows)
+
+![PHP](https://img.shields.io/badge/PHP-8.1.19%20NTS%20Windows-green?style=flat-square&logo=php)
+![Python](https://img.shields.io/badge/Python-3-brightgreen?style=flat-square&logo=python)
+![.NET](https://img.shields.io/badge/VB.NET-6-blueviolet?style=flat-square&logo=.net)
+
+![MSSQL](https://img.shields.io/badge/SQL%20Server-2019-lightgrey?style=flat-square&logo=microsoftsqlserver)
+
 ## II.职责分配
-1. SteamFinder <summary class="signed-commit-badge signed-commit-badge-large verified "> Verified </summary>
+1. SteamFinder
 -  登录页面
 -  错误信息页面
 -  账号激活页面
