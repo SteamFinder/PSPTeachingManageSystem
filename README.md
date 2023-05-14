@@ -2,8 +2,27 @@
 Created On 2023 April
 ## I.PSPTeachingManageSystem介绍
 使用PHP + SQL Server + Python开发的教务系统
-
-## II.PHP2Python接口使用说明
+## II.职责分配
+1. SteamFinder <summary class="signed-commit-badge signed-commit-badge-large verified "> Verified </summary>
+-  登录页面
+-  错误信息页面
+-  账号激活页面
+-  账号验证与鉴权API
+-  管理员面板->安全性概览(登录记录)
+-  管理员面板->注销
+-  管理员面板->用户管理
+-  管理员面板->课程管理
+-  管理员面板->学生管理界面整体设计
+-  管理员面板->成绩管理界面整体设计
+-  与Python和VB.Net通信的接口
+2. Thetheorange
+-  管理员面板->学生管理
+-  管理员面板->成绩管理
+-  接收接口信息,唤起VB.Net
+3. Thethejoe
+-  学生面板->查分
+-  学生面板->选课
+## III.PHP2Python接口使用说明
 ### 接口构成
 -  PHP2Python.php
 -  数据库User -> 表dbo.User_Interface
