@@ -79,7 +79,7 @@
                             <th>姓名</th>
                             <th>性别</th>
                             <th>生日</th>
-                            <th>课程名</th>
+                            <th>班级</th>
                             <th>联系电话</th>
                             <th>政治面貌</th>
                             <th>地址</th>
@@ -105,10 +105,67 @@
                         </tbody>
                     </table>
                 </div>
-                <br>
-                <div class="box">
                 </div>
             </div>
+        <h3>添加信息</h3>
+                <p></p>
+                <div id="add_user_result"></div>
+                <form action="add_student" method="get">
+                    <div class="fields">
+                        <div class="field half">
+                            <label for="add_username">学生ID</label>
+                            <input type="text" name="add_stu_id" id="add_username" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_password">姓名</label>
+                            <input type="text" name="add_stu_name" id="add_password" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">性别</label>
+                            <input type="text" name="add_stu_sex" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">生日</label>
+                            <input type="text" name="add_stu_birth" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">班级</label>
+                            <input type="text" name="add_stu_class" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">联系电话</label>
+                            <input type="text" name="add_stu_phone" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">政治面貌</label>
+                            <input type="text" name="add_stu_zzmm" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">地址</label>
+                            <input type="text" name="add_stu_addr" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">简介</label>
+                            <input type="text" name="add_stu_resu" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">学院ID</label>
+                            <input type="text" name="add_st_id" id="add_st_id" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_auth">权限组</label>
+                            <select name="add_auth" id="add_auth">
+                                <option value="0">- 请选择权限组（非必选） -</option>
+                                <option value="1">1 管理员</option>
+                                <option value="2">2 教师</option>
+                                <option value="3">3 学生</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="添加" class="primary" /></li>
+                    </ul>
+                </form>
         </section>
         <!-- 成绩管理 -->
         <section id="four">

@@ -21,7 +21,7 @@ Base = declarative_base()
 class St_Info(Base):
     __tablename__ = 'St_Info'
 
-    St_ID = Column(Integer, nullable=False, primary_key=True)
+    St_ID = Column(Integer, nullable=False, primary_key=True, autoincrement=False)
     St_Name = Column(String(20))
     St_Sex = Column(String(2))
     Birthdate = Column(Date)
