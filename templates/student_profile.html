@@ -32,6 +32,7 @@
         <nav class="navbar">
             <a href="#one">学生管理与查询</a>
             <a href="#two">添加学生</a>
+            <a href={{ url_for(".index") }} class="logo"><strong>刷新</strong></a>
         </nav>
     </header>
 
@@ -46,7 +47,6 @@
                     <h1>学生管理</h1>
                 </header>
                 <!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
-                <p>Test</p>
                 <h2>学生信息的查询与更新</h2>
                 <section>
                     <form action="select_student", method="get">
@@ -67,7 +67,7 @@
                         </div>
                         <ul class="actions">
                             <li><input type="submit" value="查询" class="primary" /></li>
-                            <li><input type="reset" value="清除" /></li>
+                            <li><input type="submit"  value="删除" formaction="delete_student"/></li>
                         </ul>
                     </form>
                 </section>
@@ -75,16 +75,16 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>St_ID</th>
-                            <th>St_Name</th>
-                            <th>St_Sex</th>
-                            <th>Birthdate</th>
-                            <th>Cl_Name</th>
-                            <th>Telephone</th>
-                            <th>PSTS</th>
-                            <th>Address</th>
-                            <th>Resume</th>
-                            <th>D_ID</th>
+                            <th>学生ID</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>生日</th>
+                            <th>课程名</th>
+                            <th>联系电话</th>
+                            <th>政治面貌</th>
+                            <th>地址</th>
+                            <th>简介</th>
+                            <th>学院ID</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -106,11 +106,7 @@
                     </table>
                 </div>
                 <br>
-                <p>正在对用户
-                    <strong><u>TEST</u></strong>
-                    进行操作</p>
                 <div class="box">
-                    <p>text</p>
                 </div>
             </div>
         </section>
@@ -122,13 +118,12 @@
                     <h2>成绩的查询与更新</h2>
                 </header>
                 <!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span> -->
-                <p>Test</p>
                 <section>
                     <form action="select_score", method="get">
                         <div class="fields">
                             <div class="field half">
                                 <label for="name">用户名</label>
-                                <input type="text" name="score" id="username" placeholder="非必填"/>
+                                <input type="text" name="c_num" id="username" placeholder="非必填"/>
                             </div>
                             <div class="field half">
                                 <label for="name">权限组</label>
@@ -142,7 +137,7 @@
                         </div>
                         <ul class="actions">
                             <li><input type="submit" value="查询" class="primary" /></li>
-                            <li><input type="reset" value="清除" /></li>
+                            <li><input type="submit"  value="删除" formaction="delete_score"/></li>
                         </ul>
                     </form>
                 </section>
@@ -150,9 +145,9 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>St_ID</th>
-                            <th>C_No</th>
-                            <th>Score</th>
+                            <th>学生ID</th>
+                            <th>课程编号</th>
+                            <th>分数</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -162,21 +157,16 @@
                             <td>{{ score.C_No }}</td>
                             <td>{{ score.Score }}</td>
                         </tr>
-                        {% endfor %}}
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>
                 <br>
-                <p>正在对用户
-                    <strong><u>TEST</u></strong>
-                    进行操作</p>
                 <div class="box">
-                    <p>text</p>
                 </div>
             </div>
         </section>
     </div>
-
     <!-- Footer 新的FOOTER-->
     <footer id="footer">
         <div class="inner">
