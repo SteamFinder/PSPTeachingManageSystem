@@ -94,7 +94,7 @@ $server_addrr = NULL;
                     <div class="spinner-grow spinner-grow-sm text-light"></div>
 &nbsp;&nbsp;
 INFO;
-            echo "<strong>Session Auth:" . $_SESSION["auth"] ."</strong> admin";
+            echo "<strong>会话登录成功!</strong> 正在加载管理员面板";
             echo <<<INFO
                     <br>
                     <br>
@@ -134,7 +134,7 @@ INFO;
                     <div class="spinner-grow spinner-grow-sm text-light"></div>
 &nbsp;&nbsp;
 INFO;
-            echo "<strong>Session Auth:" . $_SESSION["auth"] ."</strong> admin";
+            echo "<strong>会话登录成功!</strong> 正在加载教师面板";
             echo <<<INFO
                     <br>
                     <br>
@@ -175,7 +175,7 @@ INFO;
                     <div class="spinner-grow spinner-grow-sm text-light"></div>
 &nbsp;&nbsp;
 INFO;
-            echo "<strong>Session Auth:" . $_SESSION["auth"] ."</strong> admin";
+            echo "<strong>会话登录成功!</strong> 正在加载学生面板";
             echo <<<INFO
                     <br>
                     <br>
