@@ -691,6 +691,7 @@ status_success;
                         <i class="icon brands alt fa-css3"></i>
                         <i class="icon brands alt fa-js"></i>
                         <i class="icon brands alt fa-microsoft"></i>
+                        <i class="icon brands alt fa-python"></i>
                     </li>
                 </ul>
             </div>
