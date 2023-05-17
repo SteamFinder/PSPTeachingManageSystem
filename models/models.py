@@ -2,7 +2,7 @@ import urllib
 from urllib.parse import quote
 
 import sqlalchemy
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy import Date
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -36,8 +36,8 @@ class St_Info(Base):
 class S_C_Info(Base):
     __tablename__ = 'S_C_Info'
 
-    St_ID = Column(Integer, nullable=False)
-    C_No = Column(String(10), nullable=False, primary_key=True)
+    St_ID = Column(Integer, ForeignKey('St_Info.St_ID'), nullable=False)
+    C_No = Column(String(10), nullable=False, primary_key=True, autoincrement=False)
     Score = Column(Integer)
 
 

@@ -14,11 +14,12 @@
     <noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
     <style>
         #OverflowText {
-            padding: 15px;
+            padding: 0;
             width: 100%;
             height: 400px;
             overflow: auto;
             border: 0;
+            font-size:95%;
         }
     </style>
 </head>
@@ -29,7 +30,7 @@
 
     <!-- Header -->
     <header id="header">
-        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统</span></a>
+        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统/管理员/学生与成绩管理</span></a>
         <nav class="navbar">
             <a href="#one">学生管理与查询</a>
             <a href="#two">添加学生</a>
@@ -53,7 +54,7 @@
                     <form action="select_student", method="get">
                         <div class="fields">
                             <div class="field half">
-                                <label for="name">用户名</label>
+                                <label for="name">学生姓名</label>
                                 <input type="text" name="username" id="username" placeholder="非必填"/>
                             </div>
                         </div>
@@ -169,8 +170,10 @@
                     <form action="select_score", method="get">
                         <div class="fields">
                             <div class="field half">
-                                <label for="name">用户名</label>
-                                <input type="text" name="c_num" id="username" placeholder="非必填"/>
+                                <label for="name">学号</label>
+                                <input type="text" name="st_num" id="username" placeholder="必填"/>
+                                <label for="name">课程编号</label>
+                                <input type="text" name="c_num" id="username" placeholder="必填"/>
                             </div>
                         </div>
                         <ul class="actions">
@@ -194,6 +197,9 @@
                             <td>{{ score.St_ID }}</td>
                             <td>{{ score.C_No }}</td>
                             <td>{{ score.Score }}</td>
+                        <td>
+                                <a href={{ url_for(".dir_update_score", score_st_id=score.St_ID, score_c_no=score.C_No)}} class="button">修改</a>
+                        </td>
                         </tr>
                         {% endfor %}
                         </tbody>
@@ -203,6 +209,30 @@
                 <div class="box">
                 </div>
             </div>
+        </section>
+                 <h3>添加信息</h3>
+        <section>
+                <p></p>
+                <div id="add_user_result"></div>
+                <form action="add_score" method="get">
+                    <div class="fields">
+                        <div class="field half">
+                            <label for="add_username">学生ID</label>
+                            <input type="text" name="add_score_id" id="add_username" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_password">课程编号</label>
+                            <input type="text" name="add_score_class" id="add_password" placeholder="必填"/>
+                        </div>
+                        <div class="field half">
+                            <label for="add_st_id">分数</label>
+                            <input type="text" name="add_score_sco" id="add_st_id" placeholder="必填"/>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="添加" class="primary" /></li>
+                    </ul>
+                </form>
         </section>
     </div>
     <!-- Footer 新的FOOTER-->

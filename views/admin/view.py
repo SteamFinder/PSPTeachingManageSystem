@@ -105,15 +105,15 @@ def upd_stu(username):
         DBSession = sessionmaker(bind=engine)
         session = DBSession()
         student = session.query(St_Info).filter(St_Info.St_Name == username).update({"St_ID": add_stu_id,
-                                                                                      "St_Name": add_stu_name,
-                                                                                      "St_Sex": add_stu_sex,
-                                                                                      "Birthdate": add_stu_birth,
-                                                                                      "Cl_Name": add_stu_class,
-                                                                                      "Telephone": add_stu_phone,
-                                                                                      "PSTS": add_stu_zzmm,
-                                                                                      "Address": add_stu_addr,
-                                                                                      "Resume": add_stu_resu,
-                                                                                      "D_ID": add_st_id})
+                                                                                     "St_Name": add_stu_name,
+                                                                                     "St_Sex": add_stu_sex,
+                                                                                     "Birthdate": add_stu_birth,
+                                                                                     "Cl_Name": add_stu_class,
+                                                                                     "Telephone": add_stu_phone,
+                                                                                     "PSTS": add_stu_zzmm,
+                                                                                     "Address": add_stu_addr,
+                                                                                     "Resume": add_stu_resu,
+                                                                                     "D_ID": add_st_id})
         session.commit()
         session.close()
         return redirect(url_for(".index"))
@@ -126,11 +126,81 @@ def upd_stu(username):
 def select_score():
     ret = request.args
     if ret:
-        userid_score = request.args.get("c_num")
+        st_id_score = request.args.get("st_num")
+        c_id_score = request.args.get("c_num")
         DBSession = sessionmaker(bind=engine)
         session = DBSession()
-        result = session.query(S_C_Info).filter(S_C_Info.C_No == userid_score).all()
+        result = session.query(S_C_Info).filter(S_C_Info.C_No == c_id_score, S_C_Info.St_ID == st_id_score).all()
         session.close()
         return render_template("student_profile.html", scores=result)
+    else:
+        pass
+
+
+@admin_blu.route("/add_score", methods=["get", "post"])
+# 添加学生成绩
+def add_score():
+    ret = request.args
+    if ret:
+        add_score_id = request.args.get("add_score_id")
+        add_score_class = request.args.get("add_score_class")
+        add_score_sco = request.args.get("add_score_sco")
+
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
+        score = S_C_Info(St_ID=add_score_id, C_No=add_score_class, Score=add_score_sco)
+        session.add(score)
+        session.commit()
+        session.close()
+
+        return redirect(url_for(".index"))
+    else:
+        pass
+
+
+@admin_blu.route("/delete_score")
+# 删除学生成绩
+def delete_score():
+    ret = request.args
+    if ret:
+        st_id_score = request.args.get("st_num")
+        c_id_score = request.args.get("c_num")
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
+        result = session.query(S_C_Info).filter(S_C_Info.C_No == c_id_score, S_C_Info.St_ID == st_id_score).delete()
+        session.commit()
+        session.close()
+        return render_template("student_profile.html")
+    else:
+        pass
+
+
+@admin_blu.route("/dir_update_score/<score_st_id>/<score_c_no>")
+# 转到修改学生成绩的界面
+def dir_update_score(score_st_id, score_c_no):
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()
+    score = session.query(S_C_Info).filter(S_C_Info.St_ID == score_st_id, S_C_Info.C_No == score_c_no).all()
+    session.close()
+    return render_template("update_score.html", users=score)
+
+
+@admin_blu.route("/upd_score/<score_st_id>/<score_c_no>")
+# 修改学生成绩
+def upd_score(score_st_id, score_c_no):
+    ret = request.args
+    if ret:
+        upd_stid = ret.get("upd_stid")
+        upd_class = ret.get("upd_class")
+        upd_score = ret.get("upd_score")
+
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
+        sco = session.query(S_C_Info).filter(S_C_Info.St_ID == score_st_id, S_C_Info.C_No == score_c_no).update({"St_ID": upd_stid,
+                                                                                                                 "C_No": upd_class,
+                                                                                                                "Score": upd_score})
+        session.commit()
+        session.close()
+        return redirect(url_for(".index"))
     else:
         pass

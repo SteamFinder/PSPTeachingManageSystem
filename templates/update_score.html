@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh_cn" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>操作面板 - 管理员</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="http://127.0.0.1:5000/static/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        #OverflowText {
+            padding: 15px;
+            width: 100%;
+            height: 400px;
+            overflow: auto;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统/管理员/学生与成绩管理/成绩管理</span></a>
+        <nav class="navbar">
+            <a href="#one">学生管理与查询</a>
+            <a href="#two">修改学生信息</a>
+            <a href={{ url_for(".index") }} class="primary"><strong>刷新</strong></a>
+        </nav>
+    </header>
+    <!-- Main -->
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+    <br>
+    <br>
+            <h3>修改学生信息</h3>
+        <section>
+            {% for user in users %}
+            <p>正在对学号为{{user.St_ID}}的同学进行操作</p>
+                <div id="add_user_result"></div>
+                 <div class="field half">
+                            <label for="add_username">学生ID</label>
+                            <input type="text" name="upd_stid" id="add_username" placeholder={{ user.St_ID }}/>
+                 </div>
+                 <div class="field half">
+                            <label for="add_username">课程编号</label>
+                            <input type="text" name="upd_class" id="add_username" placeholder={{ user.C_No }}/>
+                 </div>
+                 <div class="field half">
+                            <label for="add_username">分数</label>
+                            <input type="text" name="upd_score" id="add_username" placeholder={{ user.Score }}/>
+                 </div>
+                <br>
+                <input type="submit" value="提交修改" class="primary" formaction={{ url_for(".upd_score", score_st_id=user.St_ID, score_c_no=user.C_No) }} />
+
+            {% endfor %}
+
+        </section>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+    <!-- Footer 新的FOOTER-->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="copyright">
+                <li>thetheorange , Adapted From HTML5 UP</li>
+                <li><i class="icon brands alt fa-php"></i>
+                    <i class="icon brands alt fa-html5"></i>
+                    <i class="icon brands alt fa-css3"></i>
+                    <i class="icon brands alt fa-js"></i>
+                    <i class="icon brands alt fa-microsoft"></i>
+                    <i class="icon brands alt fa-python"></i>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</div>
+<!-- Scripts -->
+<script src="http://127.0.0.1:5000/static/assets/js/jquery.min.js"></script>
+<script src="http://127.0.0.1:5000/static/assets/js/jquery.scrolly.min.js"></script>
+<script src="http://127.0.0.1:5000/static/assets/js/jquery.scrollex.min.js"></script>
+<script src="http://127.0.0.1:5000/static/assets/js/browser.min.js"></script>
+<script src="http://127.0.0.1:5000/static/assets/js/breakpoints.min.js"></script>
+<script src="http://127.0.0.1:5000/static/assets/js/util.js"></script>
+<script src="http://127.0.0.1:5000/static/assets/js/main.js"></script>
+
+
