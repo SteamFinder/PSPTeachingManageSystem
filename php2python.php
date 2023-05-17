@@ -63,7 +63,7 @@ if(isset($_SESSION["username"]))
                 <!-- 加载的圈圈-->
                     <br>
                     <div class="spinner-grow spinner-grow-sm text-light"></div>
-                    <strong>信息!</strong> 请注意这个信息。
+                    <strong>注意!</strong> 正在与Flask通信...
                     <br>
                     <br>
                 </div>
