@@ -17,6 +17,7 @@ header('Content-type:text/html;charset=gb2312');
 <html>
 <head>
     <title>管理面板 - 管理员</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />

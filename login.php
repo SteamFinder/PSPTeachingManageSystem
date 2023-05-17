@@ -20,6 +20,7 @@ $server_addrr = NULL;
 <html>
 <head>
     <title>登录 - 中南大学教务系统</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />

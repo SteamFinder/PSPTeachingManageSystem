@@ -42,6 +42,7 @@ if(isset($_SESSION["username"]))
 <head>
     <title>统一身份认证接口</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- 新 Bootstrap5 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
     <!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
