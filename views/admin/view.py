@@ -66,9 +66,54 @@ def add_stu():
         DBSession = sessionmaker(bind=engine)
         session = DBSession()
         student = St_Info(St_ID=add_stu_id, St_Name=add_stu_name, St_Sex=add_stu_sex, Birthdate=add_stu_birth,
-                       Cl_Name=add_stu_class, Telephone=add_stu_phone, PSTS=add_stu_zzmm, Address=add_stu_addr,
-                       Resume=add_stu_resu, D_ID=add_st_id)
+                          Cl_Name=add_stu_class, Telephone=add_stu_phone, PSTS=add_stu_zzmm, Address=add_stu_addr,
+                          Resume=add_stu_resu, D_ID=add_st_id)
         session.add(student)
+        session.commit()
+        session.close()
+        return redirect(url_for(".index"))
+    else:
+        pass
+
+
+@admin_blu.route("/dir_update_student/<username>")
+# 跳转到修改页面
+def dir_update_stu(username):
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()
+    students = session.query(St_Info).filter(St_Info.St_Name == username).all()
+    session.close()
+    return render_template("update_student.html", users=students)
+
+
+@admin_blu.route("/upd_student/<username>")
+# 修改学生信息
+def upd_stu(username):
+    ret = request.args
+    if ret:
+        add_stu_id = request.args.get("add_stu_id")
+        add_stu_name = request.args.get("add_stu_name")
+        add_stu_sex = request.args.get("add_stu_sex")
+        add_stu_birth = request.args.get("add_stu_birth")
+        add_stu_class = request.args.get("add_stu_class")
+        add_stu_phone = request.args.get("add_stu_phone")
+        add_stu_zzmm = request.args.get("add_stu_zzmm")
+        add_stu_addr = request.args.get("add_stu_zzmm")
+        add_stu_resu = request.args.get("add_stu_resu")
+        add_st_id = request.args.get("add_st_id")
+
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
+        student = session.query(St_Info).filter(St_Info.St_Name == username).update({"St_ID": add_stu_id,
+                                                                                      "St_Name": add_stu_name,
+                                                                                      "St_Sex": add_stu_sex,
+                                                                                      "Birthdate": add_stu_birth,
+                                                                                      "Cl_Name": add_stu_class,
+                                                                                      "Telephone": add_stu_phone,
+                                                                                      "PSTS": add_stu_zzmm,
+                                                                                      "Address": add_stu_addr,
+                                                                                      "Resume": add_stu_resu,
+                                                                                      "D_ID": add_st_id})
         session.commit()
         session.close()
         return redirect(url_for(".index"))
