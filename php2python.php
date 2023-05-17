@@ -93,9 +93,11 @@ if (!$rs) {
 //TODO: Exact URL
 if($python_loc == "admin_manage_student")
 {
-    die("<meta http-equiv=\"refresh\" content=\"0;url=EXACT LOCATION?session_id=$session_id&username=$username&auth=$auth\">");
+    //标记:python地址 学生管理
+    die("<meta http-equiv=\"refresh\" content=\"0;url=http://192.168.31.188:5000?session_id=$session_id&username=$username&auth=$auth\">");
 }else if($python_loc == "admin_manage_score"){
-    die("<meta http-equiv=\"refresh\" content=\"0;url=EXACT LOCATION?session_id=$session_id&username=$username&auth=$auth\">");
+    //标记:python地址 成绩管理
+    die("<meta http-equiv=\"refresh\" content=\"0;url=http://192.168.31.188:5000?session_id=$session_id&username=$username&auth=$auth\">");
 }else{
     //改一下提示信息
     die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=非法的请求&loc=跨程序信息传递接口::唤起Python程序\">");
