@@ -39,5 +39,3 @@ class S_C_Info(Base):
     St_ID = Column(Integer, ForeignKey('St_Info.St_ID'), nullable=False)
     C_No = Column(String(10), nullable=False, primary_key=True, autoincrement=False)
     Score = Column(Integer)
-
-

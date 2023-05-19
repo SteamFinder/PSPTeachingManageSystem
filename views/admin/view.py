@@ -1,19 +1,38 @@
 from flask import render_template, request, redirect, url_for
 from sqlalchemy.orm import sessionmaker
 
+from models.User import User_Interface
 from models.models import engine, St_Info, S_C_Info
 from . import admin_blu
 
 
 @admin_blu.route("/")
-# 主页面
+# 主页面和鉴权
 def index():
-    DBSession = sessionmaker(bind=engine)
-    session = DBSession()
-    students = session.query(St_Info).all()
-    scores = session.query(S_C_Info).all()
-    session.close()
-    return render_template("student_profile.html", users=students, scores=scores)
+    ret = request.values
+
+    if ret:
+        session_id = ret["session_id"]
+        username = ret["username"]
+        auth = ret["auth"]
+        DBSession = sessionmaker(bind=engine)
+        session = DBSession()
+        feedback = session.query(User_Interface).filter(User_Interface.session_id == session_id,
+                                                        User_Interface.username == username,
+                                                        User_Interface.auth == auth)
+        session.close()
+        if feedback:
+            DBSession = sessionmaker(bind=engine)
+            session = DBSession()
+            students = session.query(St_Info).all()
+            scores = session.query(S_C_Info).all()
+            session.close()
+            return render_template("student_profile.html", users=students, scores=scores)
+        else:
+            return render_template("test.html")
+
+    else:
+        return render_template("test.html")
 
 
 @admin_blu.route("/select_student", methods=["get", "post"])
@@ -182,7 +201,9 @@ def dir_update_score(score_st_id, score_c_no):
     session = DBSession()
     score = session.query(S_C_Info).filter(S_C_Info.St_ID == score_st_id, S_C_Info.C_No == score_c_no).all()
     session.close()
-    return render_template("update_score.html", users=score)
+
+    ip_addr = request.remote_addr
+    return render_template("update_score.html", users=score, ip=ip_addr)
 
 
 @admin_blu.route("/upd_score/<score_st_id>/<score_c_no>")
@@ -196,9 +217,10 @@ def upd_score(score_st_id, score_c_no):
 
         DBSession = sessionmaker(bind=engine)
         session = DBSession()
-        sco = session.query(S_C_Info).filter(S_C_Info.St_ID == score_st_id, S_C_Info.C_No == score_c_no).update({"St_ID": upd_stid,
-                                                                                                                 "C_No": upd_class,
-                                                                                                                "Score": upd_score})
+        sco = session.query(S_C_Info).filter(S_C_Info.St_ID == score_st_id, S_C_Info.C_No == score_c_no).update(
+            {"St_ID": upd_stid,
+             "C_No": upd_class,
+             "Score": upd_score})
         session.commit()
         session.close()
         return redirect(url_for(".index"))
