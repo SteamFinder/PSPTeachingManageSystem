@@ -7,14 +7,17 @@ from sqlalchemy import Date
 from sqlalchemy.ext.declarative import declarative_base
 
 server = '192.168.44.128'
-database = 'Student'
+database1 = 'Student'
+database2 = 'User'
 username = 'sa'
 password = '123456'
 
-quoted = urllib.parse.quote_plus('DRIVER={ODBC Driver 18 for SQL Server};'
-                                 'SERVER=' + server + ';DATABASE=' + database + ';ENCRYPT=no;UID=' + username + ';PWD=' + password)
-engine = sqlalchemy.create_engine('mssql+pyodbc:///?odbc_connect={}'.format(quoted))
-
+quoted1 = urllib.parse.quote_plus('DRIVER={ODBC Driver 18 for SQL Server};'
+                                  'SERVER=' + server + ';DATABASE=' + database1 + ';ENCRYPT=no;UID=' + username + ';PWD=' + password)
+quoted2 = urllib.parse.quote_plus('DRIVER={ODBC Driver 18 for SQL Server};'
+                                  'SERVER=' + server + ';DATABASE=' + database2 + ';ENCRYPT=no;UID=' + username + ';PWD=' + password)
+engine1 = sqlalchemy.create_engine('mssql+pyodbc:///?odbc_connect={}'.format(quoted1))
+engine2 = sqlalchemy.create_engine('mssql+pyodbc:///?odbc_connect={}'.format(quoted2))
 Base = declarative_base()
 
 
@@ -39,3 +42,11 @@ class S_C_Info(Base):
     St_ID = Column(Integer, ForeignKey('St_Info.St_ID'), nullable=False)
     C_No = Column(String(10), nullable=False, primary_key=True, autoincrement=False)
     Score = Column(Integer)
+
+
+class User_Interface(Base):
+    __tablename__ = 'User_Interface'
+
+    session_id = Column(String(64), primary_key=True)
+    username = Column(String(64))
+    auth = Column(String(64))

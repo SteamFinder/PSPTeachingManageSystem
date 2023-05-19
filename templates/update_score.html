@@ -44,26 +44,26 @@
     <br>
             <h3>修改学生信息</h3>
         <section>
+        <form>
             {% for user in users %}
             <p>正在对学号为{{user.St_ID}}的同学进行操作</p>
                 <div id="add_user_result"></div>
                  <div class="field half">
                             <label for="add_username">学生ID</label>
-                            <input type="text" name="upd_stid" id="add_username" placeholder={{ user.St_ID }}/>
+                            <input type="text" name="upd_stid" id="add_username" placeholder={{ user.St_ID }}>
                  </div>
                  <div class="field half">
                             <label for="add_username">课程编号</label>
-                            <input type="text" name="upd_class" id="add_username" placeholder={{ user.C_No }}/>
+                            <input type="text" name="upd_class" id="add_username" placeholder={{ user.C_No }}>
                  </div>
                  <div class="field half">
                             <label for="add_username">分数</label>
-                            <input type="text" name="upd_score" id="add_username" placeholder={{ user.Score }}/>
+                            <input type="text" name="upd_score" id="add_username" placeholder={{ user.Score }}>
                  </div>
                 <br>
                 <input type="submit" value="提交修改" class="primary" formaction={{ url_for(".upd_score", score_st_id=user.St_ID, score_c_no=user.C_No) }} />
-
             {% endfor %}
-
+        </form>
         </section>
     </div>
     <div class="col-2"></div>
