@@ -30,7 +30,16 @@
 
     <!-- Header -->
     <header id="header">
-        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统/管理员/学生与成绩管理</span></a>
+        <!-- 文件夹地址的效果BEGIN -->
+        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
+        <span>
+            <a href="http://192.168.137.1:8080/public/login.php" target="_blank">教务系统</a>
+            /
+            <a href="http://192.168.137.1:8080/public/php_service/panel_admin.php" target="_blank">管理员</a>
+            /
+            <a href="http://{{ ip }}:5000">学生与成绩管理</a>
+        </span>
+        <!-- 文件夹地址的效果END -->
         <nav class="navbar">
             <a href="#one">学生管理与查询</a>
             <a href="#two">添加学生</a>
@@ -106,8 +115,12 @@
                 <br>
                 <br>
                 <br>
-    <h3>添加信息</h3>
-        <section>
+            </div>
+             </section>
+    <div class="inner">
+    <div class="box">
+                <h3>添加信息</h3>
+            <section>
                 <p></p>
                 <div id="add_user_result"></div>
                 <form action="add_student" method="get">
@@ -156,8 +169,10 @@
                     <ul class="actions">
                         <li><input type="submit" value="添加" class="primary" /></li>
                     </ul>
-                </form>
-        </section>
+                   </form>
+                </section>
+    </div>
+    </div>
         <!-- 成绩管理 -->
         <section id="four">
             <div class="inner">
@@ -206,10 +221,10 @@
                     </table>
                 </div>
                 <br>
-                <div class="box">
-                </div>
             </div>
         </section>
+    <div class="inner">
+        <div class="box">
                  <h3>添加信息</h3>
         <section>
                 <p></p>
@@ -234,12 +249,14 @@
                     </ul>
                 </form>
         </section>
+            </div>
+    </div>
     </div>
     <!-- Footer 新的FOOTER-->
     <footer id="footer">
         <div class="inner">
             <ul class="copyright">
-                <li>thetheorange , Adapted From HTML5 UP</li>
+                <li>&copy;thetheorange , Adapted From HTML5 UP</li>
                 <li><i class="icon brands alt fa-php"></i>
                     <i class="icon brands alt fa-html5"></i>
                     <i class="icon brands alt fa-css3"></i>
@@ -250,9 +267,7 @@
             </ul>
         </div>
     </footer>
-
-</div>
-
+    </div>
 <!-- Scripts -->
 <script src="../static/assets/js/jquery.min.js"></script>
 <script src="../static/assets/js/jquery.scrolly.min.js"></script>
@@ -261,6 +276,5 @@
 <script src="../static/assets/js/breakpoints.min.js"></script>
 <script src="../static/assets/js/util.js"></script>
 <script src="../static/assets/js/main.js"></script>
-
 </body>
 </html>

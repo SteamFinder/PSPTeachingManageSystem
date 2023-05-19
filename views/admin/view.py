@@ -31,7 +31,8 @@ def index():
             return redirect("http://192.168.137.1:8080/public/login.php?info=wrong&detail=登录信息错误&loc=Python鉴权")
 
     else:
-        return render_template("test.html")
+        # 标记: ->php
+        return redirect("http://192.168.137.1:8080/public/login.php?info=wrong&detail=登录信息错误&loc=Python鉴权")
 
 
 @admin_blu.route("/pass_index")
