@@ -81,7 +81,9 @@ $server_addrr = NULL;
             //BEGIN
             echo <<<INFO
     <div class="container">
-        <div class="row"><br><br></div>
+        <div class="row"></div>
+        <br>
+        <br>
         <div class="row">
             <!-- 3 6 3 布局 中间显示加载条 -->
             <div class="col-3"></div>
@@ -121,7 +123,9 @@ INFO;
             //BEGIN
             echo <<<INFO
     <div class="container">
-        <div class="row"><br><br></div>
+        <div class="row"></div>
+        <br>
+        <br>
         <div class="row">
             <!-- 3 6 3 布局 中间显示加载条 -->
             <div class="col-3"></div>
@@ -162,7 +166,9 @@ INFO;
             //BEGIN
             echo <<<INFO
     <div class="container">
-        <div class="row"><br><br></div>
+        <div class="row"></div>
+        <br>
+        <br>
         <div class="row">
             <!-- 3 6 3 布局 中间显示加载条 -->
             <div class="col-3"></div>
