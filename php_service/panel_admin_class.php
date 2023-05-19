@@ -182,7 +182,16 @@ header('Content-type:text/html;charset=gb2312');
 
     <!-- Header -->
     <header id="header">
-        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统/管理员/课程管理</span></a>
+        <!-- 文件夹地址的效果BEGIN -->
+        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
+        <span>
+            <a href="/public/login.php" target="_blank">教务系统</a>
+            /
+            <a href="/public/php_service/panel_admin.php" target="_blank">管理员</a>
+            /
+            <a href="/public/php_service/panel_admin_class.php">课程管理</a>
+        </span>
+        <!-- 文件夹地址的效果END -->
         <nav class="navbar">
             <a href="#query">课程管理与查询</a>
             <a href="#add">添加课程</a>

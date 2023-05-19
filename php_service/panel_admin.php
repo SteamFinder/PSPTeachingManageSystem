@@ -39,7 +39,14 @@ header('Content-type:text/html;charset=gb2312');
 
     <!-- Header -->
     <header id="header" class="alt">
-        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统/管理员</span></a>
+        <!-- 文件夹地址的效果BEGIN -->
+        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
+        <span>
+            <a href="/public/login.php" target="_blank">教务系统</a>
+            /
+            <a href="/public/php_service/panel_admin.php" target="_blank">管理员</a>
+        </span>
+        <!-- 文件夹地址的效果END -->
         <nav>
             <a href="#menu">功能面板</a>
         </nav>

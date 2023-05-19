@@ -151,7 +151,16 @@ if(isset($_GET["update_username_default"]))
 
     <!-- Header -->
     <header id="header">
-        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong> <span>教务系统/管理员/用户管理</span></a>
+        <!-- 文件夹地址的效果BEGIN -->
+        <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
+        <span>
+            <a href="/public/login.php" target="_blank">教务系统</a>
+            /
+            <a href="/public/php_service/panel_admin.php" target="_blank">管理员</a>
+            /
+            <a href="/public/php_service/panel_admin_user.php">用户管理</a>
+        </span>
+        <!-- 文件夹地址的效果END -->
         <nav class="navbar">
             <a href="#one">用户管理与查询</a>
             <a href="#add_user_result">添加用户</a>
