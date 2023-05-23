@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>中南大学教务系统</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        /*运动渐变色*/
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            height: 100vh;
+            color: #fff;
+            background-image: linear-gradient(
+            125deg,#27a769,#20db6e, #1dd8c8, #54b0ef, #0077ff,#1171ee
+            );
+            background-size: 400%;
+            animation: bgmove 15s infinite;
+            gap: 20px;
+        }
+        @keyframes bgmove {
+            0%{
+                background-position: 0  50%;
+            }
+            25%{
+                background-position: 65%  50%;
+            }
+            50%{
+                background-position: 100%  50%;
+            }
+            75%{
+                background-position: 35%  50%;
+            }
+            100%{
+                background-position: 0  50%;
+            }
+        }
+        .img{
+            width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 18px 18px 30px rgba(0,0,0,0.15),
+                        -18px -18px 30px rgba(255,255,255,0.06);
+            transition: all .2s ease-in-out;
+        }
+        img{
+            width: 60px;
+            transition: all .2s ease-in-out;
+        }
+        .img:hover{
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(0,0,0,0.2),
+            0 0 0 rgba(255,255,255,0.1),
+            inset 18px 18px 30px rgba(0,0,0,0.08),
+            inset -18px -18px 30px rgba(255,255,255,0.1);
+            transition: all .2s ease-in-out;
+        }
+        .img:hover img{
+            width: 58px;
+            transition: all .2s ease-in-out;
+        }
+        .img:hover h3{
+            font-size: 28px;
+            transition: all .2s ease-in-out;
+        }
+    </style>
+    <script>
+        function login(){
+	        window.location.replace('./public/login.php');
+        }
+        function activate(){
+            window.location.replace('./public/activate.php');
+        }
+        function config(){
+            window.location.replace('./public/setup.php');
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎来到中南大学教务系统</h1>
+        <div class="img" onclick="login()">
+            <img src="./public/assets/login.png">
+            <p>&nbsp;登录</p>
+        </div>
+        <div class="img" onclick="activate()">
+            <img src="./public/assets/activate.png">
+            <p>&nbsp;激活</p>
+        </div>
+        <div class="img" onclick="config()" style="width:100px;height:100px;">
+            <img src="./public/assets/config.png" style="width:58px;height:58px;">
+        </div>
+</body>
+</html>
