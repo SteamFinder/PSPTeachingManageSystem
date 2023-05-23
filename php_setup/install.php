@@ -20,7 +20,7 @@ $DBPassword = $_POST["DBPassword"] ?? NULL;
     if($PHPServerIP == NULL || $PyServerIP == NULL
         || $DBIP == NULL    || $DBPort == NULL
         ||$DBAdmin == NULL  || $DBPassword == NULL){
-        die("<meta http-equiv=\"refresh\" content=\"0;url=/public/setup.php?info=安装信息不足\">");
+        die("<meta http-equiv=\"refresh\" content=\"0;url=/public/setup.php?info=安装信息不足&status=wrong\">");
     }
     $SetupInfo = array(
         'PHPServerIP' => $PHPServerIP,
