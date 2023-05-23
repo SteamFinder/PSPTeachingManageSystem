@@ -15,7 +15,8 @@ $status = $_GET["status"] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title>设置</title>
+    <title>系统安装设置</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8">
     <!-- 新 Bootstrap5 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
