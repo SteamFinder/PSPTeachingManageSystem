@@ -51,13 +51,22 @@ $LoginDate = date("Y/m/d G:i:s");
 $timezone = date("e - ") . "GMT" . date("P");
 $ip = $_SERVER['REMOTE_ADDR'];
 $server_addrr = NULL;
+require('../php_setup/read_config.php');
+$config = new read_config;
+$config->readConfig();
+$PHPServerIP = $config->getPHPServerIP();
+$PyServerIP = $config->getPyServerIP();
+$DBIP = $config->getDBIP();
+$DBPort = $config->getDBPort();
+$DBAdmin = $config->getDBAdmin();
+$DBPassword = $config->getDBPassword();
 //  使用MD5加密
 //  启动Session
 //  声明一个名为 auth 的变量，并赋空值
 //  Auth Method
 //  1 Admin   2 Teacher   3 Student
     $_SESSION["auth"] = NULL;
-    $conn = odbc_connect('MSSQL-User', 'sa', '123456');
+    $conn = odbc_connect('MSSQL-User', $DBAdmin, $DBPassword);
     if (!$conn) {
         exit("连接失败: " . $conn);
     }

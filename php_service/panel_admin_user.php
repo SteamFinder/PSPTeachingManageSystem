@@ -5,6 +5,15 @@ panel_admin_auth();
 $server_addrr = NULL;
 require 'mssql_exec_count.php';
 header('Content-type:text/html;charset=gb2312');
+require('../php_setup/read_config.php');
+$config = new read_config;
+$config->readConfig();
+$PHPServerIP = $config->getPHPServerIP();
+$PyServerIP = $config->getPyServerIP();
+$DBIP = $config->getDBIP();
+$DBPort = $config->getDBPort();
+$DBAdmin = $config->getDBAdmin();
+$DBPassword = $config->getDBPassword();
 if(isset($_GET["choose_userinfo_username"]))
 {
     $choose_userinfo_username = $_GET["choose_userinfo_username"];
@@ -77,8 +86,8 @@ if(isset($_GET["delete"]))
     $delsql = new mssql_exec_count
     (
         'MSSQL-User',
-        'sa',
-        '123456',
+        $DBAdmin,
+        $DBPassword,
         "DELETE FROM User_Info WHERE username = '$delete'"
     );
     $delsql->setConnect();
@@ -231,8 +240,8 @@ EOA;
                         $usersql = new mssql_exec_count
                         (
                             'MSSQL-User',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "SELECT * FROM User_Info WHERE username = '$query_username' OR auth = '$query_auth' "
                         );
                         $usersql->setConnect();
@@ -276,8 +285,8 @@ EOA;
                     $usersql = new mssql_exec_count
                     (
                         'MSSQL-User',
-                        'sa',
-                        '123456',
+                        $DBAdmin,
+                        $DBPassword,
                         "SELECT * FROM User_Info"
                     );
                     $usersql->setConnect();
@@ -332,8 +341,8 @@ EOF;
                             $ssafetysql = new mssql_exec_count
                             (
                                 'MSSQL-User',
-                                'sa',
-                                '123456',
+                                $DBAdmin,
+                                $DBPassword,
                                 "SELECT * FROM User_loginRec WHERE username = '$choose_userinfo_username' ORDER BY logintime DESC"
                             );
                             $ssafetysql->setConnect();
@@ -361,7 +370,7 @@ EOF;
                 <div class="box">
                     <!--显示信息-->
 EOFF;
-                    $upd_conn = odbc_connect('MSSQL-User', 'sa', '123456');
+                    $upd_conn = odbc_connect('MSSQL-User', $DBAdmin, $DBPassword);
                     if (!$upd_conn) {
                         exit("连接失败: " . $upd_conn);
                     }
@@ -443,8 +452,8 @@ INPUT;
                         $updsql = new mssql_exec_count
                         (
                             'MSSQL-User',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "UPDATE User_Info SET password='$update_password' WHERE username='$update_username_default';"
                         );
                         $updsql->setConnect();
@@ -456,8 +465,8 @@ INPUT;
                         $updsql = new mssql_exec_count
                         (
                             'MSSQL-User',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "UPDATE User_Info SET st_id='$update_st_id' WHERE username='$update_username_default';"
                         );
                         $updsql->setConnect();
@@ -469,8 +478,8 @@ INPUT;
                         $updsql = new mssql_exec_count
                         (
                             'MSSQL-User',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "UPDATE User_Info SET auth='$update_auth' WHERE username='$update_username_default';"
                         );
                         $updsql->setConnect();
@@ -520,7 +529,7 @@ INPUT;
                 <?php
                 if(isset($add_username))
                 {
-                    $conn = odbc_connect('MSSQL-User', 'sa', '123456');
+                    $conn = odbc_connect('MSSQL-User', $DBAdmin, $DBPassword);
                     if (!$conn) {
                         exit("连接失败: " . $conn);
                     }
@@ -535,8 +544,8 @@ INPUT;
                         $tsql = new mssql_exec_count
                         (
                             'MSSQL-User',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "INSERT INTO User_Info VALUES ('$add_username','$add_password','$add_auth','$add_st_id')"
                         );
                         $tsql->setConnect();

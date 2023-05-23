@@ -5,6 +5,15 @@ require 'mssql_exec_count.php';
 panel_admin_auth();
 $server_addrr = NULL;
 header('Content-type:text/html;charset=gb2312');
+require('../php_setup/read_config.php');
+$config = new read_config;
+$config->readConfig();
+$PHPServerIP = $config->getPHPServerIP();
+$PyServerIP = $config->getPyServerIP();
+$DBIP = $config->getDBIP();
+$DBPort = $config->getDBPort();
+$DBAdmin = $config->getDBAdmin();
+$DBPassword = $config->getDBPassword();
 //query_username
 //query_auth
 ?>
@@ -105,8 +114,8 @@ header('Content-type:text/html;charset=gb2312');
                     $safetysql = new mssql_exec_count
                     (
                         'MSSQL-User',
-                        'sa',
-                        '123456',
+                        $DBAdmin,
+                        $DBPassword,
                         'SELECT * FROM User_loginRec ORDER BY logintime DESC'
                     );
                     $safetysql->setConnect();

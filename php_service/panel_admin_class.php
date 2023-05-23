@@ -257,7 +257,7 @@ header('Content-type:text/html;charset=gb2312');
                             (
                                 'MSSQL-Student',
                                 'sa',
-                                '123456',
+                                $DBPassword,
                                 "SELECT * FROM C_Info WHERE C_No = '$query_c_id' OR C_Name = '$query_c_name' OR C_Type = '$query_c_type' OR C_Credit = '$query_c_credit'"
                             );
                             $querysql->setConnect();
@@ -286,7 +286,7 @@ header('Content-type:text/html;charset=gb2312');
                             (
                                 'MSSQL-Student',
                                 'sa',
-                                '123456',
+                                $DBPassword,
                                 "SELECT * FROM C_Info"
                             );
                             $querysql->setConnect();
@@ -326,7 +326,7 @@ header('Content-type:text/html;charset=gb2312');
                     (
                         'MSSQL-Student',
                         'sa',
-                        '123456',
+                        $DBPassword,
                         "DELETE FROM C_Info WHERE C_No = '$delclassid'"
                     );
                     $updsql->setConnect();
@@ -342,7 +342,7 @@ header('Content-type:text/html;charset=gb2312');
                     (
                         'MSSQL-Student',
                         'sa',
-                        '123456',
+                        $DBPassword,
                         "DELETE FROM S_C_Info WHERE St_ID = '$del_stid'"
                     );
                     $delsql->setConnect();
@@ -378,7 +378,7 @@ VIEW;
                     (
                         'MSSQL-Student',
                         'sa',
-                        '123456',
+                        $DBPassword,
                         "SELECT St_Info.St_ID,St_Name,St_Sex,Cl_Name,Score FROM St_Info JOIN S_C_Info ON St_Info.St_ID = S_C_Info.St_ID WHERE C_No = '$choose_classid'"
                     );
                     $qcsql->setConnect();
@@ -413,7 +413,7 @@ VIEW;
                         进行操作</p>
                     <div class="box">
 VIEW;
-                    $upd_conn = odbc_connect('MSSQL-Student', 'sa', '123456');
+                    $upd_conn = odbc_connect('MSSQL-Student', $DBAdmin, $DBPassword);
                     if (!$upd_conn) {
                         exit("连接失败: " . $upd_conn);
                     }
@@ -496,8 +496,8 @@ INPUT;
                             $updsql = new mssql_exec_count
                             (
                                 'MSSQL-Student',
-                                'sa',
-                                '123456',
+                                $DBAdmin,
+                                $DBPassword,
                                 "UPDATE C_Info SET C_Name='$upd_C_Name' WHERE C_No='$choose_classid';"
                             );
                             $updsql->setConnect();
@@ -509,8 +509,8 @@ INPUT;
                             $updsql = new mssql_exec_count
                             (
                                 'MSSQL-Student',
-                                'sa',
-                                '123456',
+                                $DBAdmin,
+                                $DBPassword,
                                 "UPDATE C_Info SET C_Credit='$upd_C_Credit' WHERE C_No='$choose_classid';"
                             );
                             $updsql->setConnect();
@@ -522,8 +522,8 @@ INPUT;
                             $updsql = new mssql_exec_count
                             (
                                 'MSSQL-Student',
-                                'sa',
-                                '123456',
+                                $DBAdmin,
+                                $DBPassword,
                                 "UPDATE C_Info SET C_Type='$upd_C_Type' WHERE C_No='$choose_classid';"
                             );
                             $updsql->setConnect();
@@ -535,8 +535,8 @@ INPUT;
                             $updsql = new mssql_exec_count
                             (
                                 'MSSQL-Student',
-                                'sa',
-                                '123456',
+                                $DBAdmin,
+                                $DBPassword,
                                 "UPDATE C_Info SET C_Des='$upd_C_Des' WHERE C_No='$choose_classid';"
                             );
                             $updsql->setConnect();
@@ -612,7 +612,7 @@ INPUT;
                 <?php
                 if($add_status == "yes")
                 {
-                    $conn = odbc_connect('MSSQL-Student', 'sa', '123456');
+                    $conn = odbc_connect('MSSQL-Student', $DBAdmin, $DBPassword);
                     if (!$conn) {
                         exit("连接失败: " . $conn);
                     }
@@ -630,8 +630,8 @@ INPUT;
                         $tsql = new mssql_exec_count
                         (
                             'MSSQL-Student',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "INSERT INTO C_Info VALUES ($add_classid,'$add_classname','$add_classtype',$add_classcredit,'$add_classdes')"
                         );
                         $tsql->setConnect();
@@ -665,8 +665,8 @@ status_alert;
                         $tsql = new mssql_exec_count
                         (
                             'MSSQL-Student',
-                            'sa',
-                            '123456',
+                            $DBAdmin,
+                            $DBPassword,
                             "INSERT INTO S_C_Info VALUES ('$add_class_stid','$add_class_classid','$add_class_score')"
                         );
                         $tsql->setConnect();

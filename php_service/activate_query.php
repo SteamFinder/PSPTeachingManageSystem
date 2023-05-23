@@ -1,5 +1,14 @@
 <?php
 header('Content-type:text/html;charset=gb2312');
+require('../php_setup/read_config.php');
+$config = new read_config;
+$config->readConfig();
+$PHPServerIP = $config->getPHPServerIP();
+$PyServerIP = $config->getPyServerIP();
+$DBIP = $config->getDBIP();
+$DBPort = $config->getDBPort();
+$DBAdmin = $config->getDBAdmin();
+$DBPassword = $config->getDBPassword();
 isset($_POST['new_username'])?$new_username = $_POST['new_username']:$new_username = NULL;
 isset($_POST['new_password'])?$new_password = $_POST['new_password']:$new_password = NULL;
 isset($_POST['st_name'])?$st_name = $_POST['st_name']:$st_name = NULL;
@@ -8,7 +17,7 @@ isset($_POST['st_id'])?$st_id = $_POST['st_id']:$st_id = NULL;
 isset($_POST['cl_name'])?$cl_name = $_POST['cl_name']:$cl_name = NULL;
 $server_addrr = NULL;
 require 'mssql_exec_count.php';
-$conn = odbc_connect('MSSQL-Student', 'sa', '123456');
+$conn = odbc_connect('MSSQL-Student', $DBAdmin, $DBPassword);
 if (!$conn) {
     exit("连接失败: " . $conn);
 }
@@ -19,7 +28,7 @@ if (!$rs) {
 }
 if($st_name == odbc_result($rs, "St_Name"))
 {
-    $conn = odbc_connect('MSSQL-User', 'sa', '123456');
+    $conn = odbc_connect('MSSQL-User', $DBAdmin, $DBPassword);
     if (!$conn) {
         exit("连接失败: " . $conn);
     }
@@ -36,8 +45,8 @@ if($st_name == odbc_result($rs, "St_Name"))
     $tsql = new mssql_exec_count
     (
         'MSSQL-User',
-        'sa',
-        '123456',
+        $DBAdmin,
+        $DBPassword,
         "INSERT INTO User_Info VALUES ('$new_username','$pwd','3','$st_id')"
     );
     $tsql->setConnect();
