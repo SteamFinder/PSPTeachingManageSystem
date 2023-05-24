@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <title>中南大学教务系统</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <style>
         /*运动渐变色*/
         body{
-            display: flex;
+            /* display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
             font-size: 30px;
             height: 100vh;
             color: #fff;
@@ -72,7 +71,7 @@
     </style>
     <script>
         function login(){
-	        window.location.replace('./public/login.php');
+            window.location.replace('./public/login.php');
         }
         function activate(){
             window.location.replace('./public/activate.php');
@@ -82,8 +81,14 @@
         }
     </script>
 </head>
-<body>
-    <h1>欢迎来到中南大学教务系统</h1>
+<body style="padding: 10% 10%;">
+    <div style="text-align: center;">
+        <img src="./public/assets/csulogo.png" style="width:98px;height:98px;" onclick="config()" style="margin:0 auto;" />
+    </div>
+    <div style="display: flex;justify-content: center;align-items: center;">
+        <h1>欢迎来到中南大学教务系统</h1>
+    </div>
+    <div style="display: flex;justify-content: center;align-items: center;gap: 30px;">
         <div class="img" onclick="login()">
             <img src="./public/assets/login.png">
             <p>&nbsp;登录</p>
@@ -92,8 +97,6 @@
             <img src="./public/assets/activate.png">
             <p>&nbsp;激活</p>
         </div>
-        <div class="img" onclick="config()" style="width:100px;height:100px;">
-            <img src="./public/assets/config.png" style="width:58px;height:58px;">
-        </div>
+    </div>
 </body>
 </html>
