@@ -51,7 +51,7 @@ $DBPassword = $config->getDBPassword();
         <!-- 文件夹地址的效果BEGIN -->
         <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
         <span>
-            <a href="/public/login.php">教务系统</a>
+            <a href="http://202.197.75.107:8080/">教务系统</a>
             /
             <a href="/public/php_service/panel_admin.php">管理员</a>
         </span>
@@ -158,7 +158,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic01.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="/users.html">
+                    <h3><a href="/public/php_service/panel_admin_user.php">
                             用户管理
                         </a></h3>
                     <p>查询用户与更改信息</p>
@@ -170,7 +170,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic02.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="/classes.html">
+                    <h3><a href="/public/php_service/panel_admin_class.php">
                             课程管理
                         </a></h3>
                     <p>查询课程与更改课程信息</p>
@@ -181,7 +181,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic03.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="/students.html">
+                    <h3><a href="http://202.197.75.107:8080/public/php2python.php?python_loc=admin_manage_student">
                             学生管理
                         </a></h3>
                     <p>查询学生与更改信息</p>
@@ -192,7 +192,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic04.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="/scores.html">
+                    <h3><a href="http://202.197.75.107:8080/public/php2python.php?python_loc=admin_manage_score">
                             成绩管理
                         </a></h3>
                     <p>查询成绩与更改信息</p>
