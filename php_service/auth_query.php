@@ -122,7 +122,7 @@ INFO;
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=/public/php_service/panel_admin.php\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=/home.html\">");
         }
         else if ($auth == 2) {
             $_SESSION["username"] = $username;
@@ -164,7 +164,7 @@ INFO;
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/php_service/panel_teacher.php\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/login.php?info=wrong&detail=您是教师账号，请使用管理员账号登录&loc=user_auth\">");
         }
         else if ($auth == 3) {
             $_SESSION["username"] = $username;
@@ -207,14 +207,14 @@ INFO;
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/php_service/panel_student.php\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=$server_addrr/public/login.php?info=wrong&detail=您是学生账号，请使用管理员账号登录&loc=user_auth\">");
         }else{
             $sql="INSERT INTO User_loginRec (logintime,timezone,ip,isdeny) VALUES ('$LoginDate','$timezone','$ip','Denied')";
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = $_SESSION["count"]+1;
             $count = $_SESSION["count"];
-            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=Incorrect username or password&loc=user_auth&count=$count\">");
+            die("<meta http-equiv=\"refresh\" content=\"0;url=$server_addrr/public/login.php?info=wrong&detail=用户名或密码错误&loc=user_auth&count=$count\">");
 //          die("<meta http-equiv=\"refresh\" content=\"0;url=old_login.php/?info=wrong&username=$username&permisson=$auth\">");
         }
         ?>
