@@ -163,9 +163,9 @@ if(isset($_GET["update_username_default"]))
         <!-- 文件夹地址的效果BEGIN -->
         <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
         <span>
-            <a href="/public/login.php" target="_blank">教务系统</a>
+            <a href="/public/login.php">教务系统</a>
             /
-            <a href="/public/php_service/panel_admin.php" target="_blank">管理员</a>
+            <a href="/public/php_service/panel_admin.php">管理员</a>
             /
             <a href="/public/php_service/panel_admin_user.php">用户管理</a>
         </span>

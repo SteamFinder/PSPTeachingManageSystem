@@ -51,9 +51,9 @@ $DBPassword = $config->getDBPassword();
         <!-- 文件夹地址的效果BEGIN -->
         <a href="https://www.csu.edu.cn" class="logo"><strong>中南大学</strong></a>
         <span>
-            <a href="/public/login.php" target="_blank">教务系统</a>
+            <a href="/public/login.php">教务系统</a>
             /
-            <a href="/public/php_service/panel_admin.php" target="_blank">管理员</a>
+            <a href="/public/php_service/panel_admin.php">管理员</a>
         </span>
         <!-- 文件夹地址的效果END -->
         <nav>
@@ -158,7 +158,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic01.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/users.html','_blank','width=1000,height=800')">
+                    <h3><a href="/users.html">
                             用户管理
                         </a></h3>
                     <p>查询用户与更改信息</p>
@@ -170,7 +170,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic02.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/classes.html','_blank','width=1000,height=800')">
+                    <h3><a href="/classes.html">
                             课程管理
                         </a></h3>
                     <p>查询课程与更改课程信息</p>
@@ -181,7 +181,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic03.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/students.html','_blank','width=1500,height=700')">
+                    <h3><a href="/students.html">
                             学生管理
                         </a></h3>
                     <p>查询学生与更改信息</p>
@@ -192,7 +192,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic04.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="javascript:window.open('<?php echo $server_addrr;?>/scores.html','_blank','width=1500,height=700')">
+                    <h3><a href="/scores.html">
                             成绩管理
                         </a></h3>
                     <p>查询成绩与更改信息</p>
