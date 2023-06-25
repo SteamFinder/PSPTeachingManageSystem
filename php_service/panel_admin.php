@@ -63,12 +63,12 @@ $DBPassword = $config->getDBPassword();
 
     <!-- Menu -->
     <nav id="menu">
-<!--        <ul class="links">-->
-<!--            <li><a href="index.html">Home</a></li>-->
-<!--            <li><a href="landing.html">Landing</a></li>-->
-<!--            <li><a href="generic.html">Generic</a></li>-->
-<!--            <li><a href="elements.html">Elements</a></li>-->
-<!--        </ul>-->
+        <!--        <ul class="links">-->
+        <!--            <li><a href="index.html">Home</a></li>-->
+        <!--            <li><a href="landing.html">Landing</a></li>-->
+        <!--            <li><a href="generic.html">Generic</a></li>-->
+        <!--            <li><a href="elements.html">Elements</a></li>-->
+        <!--        </ul>-->
         <ul class="actions stacked">
             <li><a href="panel_admin.php" class="button primary fit">刷新</a></li>
             <li><a href="auth_query.php?session=destroy" class="button fit">退出登录</a></li>
@@ -80,17 +80,20 @@ $DBPassword = $config->getDBPassword();
         <div class="inner">
             <header class="major">
                 <h1>欢迎使用中南大学教务系统</h1>
+                <div class="content">
+                    <p>您现在正在访问管理员面板<br />
+                        具体功能请在下面选择</p>
+                    <ul class="actions">
+                        <li><a href="#one" class="button next scrolly">Get Started</a></li>
+                    </ul>
+                </div>
             </header>
             <div class="content">
-                <p>您现在正在访问管理员面板<br />
-                    具体功能请在下面选择</p>
-                <ul class="actions">
-                    <li><a href="#one" class="button next scrolly">Get Started</a></li>
-                </ul>
+                <iframe src="http://202.197.75.107:8080/status" width="100%" height="350px" frameborder="0px"></iframe>
             </div>
         </div>
     </section>
-<!--    安全性-->
+    <!--    安全性-->
     <section id="overview">
         <div class="inner">
             <header class="major">
@@ -170,7 +173,7 @@ $DBPassword = $config->getDBPassword();
 										<img src="images/pic02.jpg" alt="" />
 									</span>
                 <header class="major">
-                    <h3><a href="/public/php_service/panel_admin_class.php">
+                    <h3><a href="/public/php_service/panel_admin_user.php">
                             课程管理
                         </a></h3>
                     <p>查询课程与更改课程信息</p>
