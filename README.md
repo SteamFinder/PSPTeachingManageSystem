@@ -33,8 +33,7 @@ PHP运行阶段简图
 -  管理员面板->成绩管理
 -  接收接口信息,唤起VB.Net
 3. Thethejoe
--  学生面板->查分
--  学生面板->选课
+-  Senior QA Test
 ## III.PHP2Python接口使用说明
 ### 接口构成
 -  PHP2Python.php
