@@ -207,7 +207,7 @@ INFO;
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"2;url=$server_addrr/public/login.php?info=wrong&detail=您是学生账号，请使用管理员账号登录&loc=user_auth\">");
+            die("<meta http-equiv=\"refresh\" content=\"1;url=$server_addrr/public/login.php?info=wrong&detail=您是学生账号，请使用管理员账号登录&loc=user_auth\">");
         }else{
             $sql="INSERT INTO User_loginRec (logintime,timezone,ip,isdeny) VALUES ('$LoginDate','$timezone','$ip','Denied')";
             odbc_exec($conn, $sql);
