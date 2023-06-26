@@ -1,8 +1,13 @@
+<?php
+//  启动会话
+require_once './php_service/panel_auth.php';
+panel_admin_auth();
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>管理面板 - 课程管理</title>
+    <title>管理面板 - 主页</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -43,57 +48,8 @@
             fill: currentColor
         }
 
-        .dropdown-toggle {
-            outline: 0
-        }
-
         .nav-flush .nav-link {
             border-radius: 0
-        }
-
-        .btn-toggle {
-            display: inline-flex;
-            align-items: center;
-            padding: .25rem .5rem;
-            font-weight: 600;
-            color: rgba(0, 0, 0, .65);
-            background-color: transparent;
-            border: 0
-        }
-
-        .btn-toggle:hover,
-        .btn-toggle:focus {
-            color: rgba(0, 0, 0, .85);
-            background-color: #d2f4ea
-        }
-
-        .btn-toggle::before {
-            width: 1.25em;
-            line-height: 0;
-            content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
-            transition: transform .35s ease;
-            transform-origin: .5em 50%
-        }
-
-        .btn-toggle[aria-expanded="true"] {
-            color: rgba(0, 0, 0, .85)
-        }
-
-        .btn-toggle[aria-expanded="true"]::before {
-            transform: rotate(90deg)
-        }
-
-        .btn-toggle-nav a {
-            display: inline-flex;
-            padding: .1875rem .5rem;
-            margin-top: .125rem;
-            margin-left: 1.25rem;
-            text-decoration: none
-        }
-
-        .btn-toggle-nav a:hover,
-        .btn-toggle-nav a:focus {
-            background-color: #d2f4ea
         }
 
         .scrollarea {
@@ -189,7 +145,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="http://202.197.75.107:8080/home.html" class="nav-link link-dark" aria-current="page">
+                    <a href="http://202.197.75.107:8080/home.php" class="nav-link active" aria-current="page">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#home" />
                         </svg>
@@ -197,36 +153,23 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/users.html" class="nav-link link-dark">
+                    <a href="http://202.197.75.107:8080/users.php" class="nav-link link-dark">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#speedometer2" />
                         </svg>
                         用户管理
                     </a>
                 </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        <a href="#" class="nav-link active">
-                            <svg class="bi me-2" width="16" height="16">
-                                <use xlink:href="#table" />
-                            </svg>
-                            课程管理
-                        </a>
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <!-- <li><a href="http://202.197.75.107:8080/public/php_service/panel_admin_user.php#one" class="link-dark rounded">管理与查询</a></li>
-                            <li><a href="http://202.197.75.107:8080/public/php_service/panel_admin_user.php#add_user_result" class="link-dark rounded">添加用户</a></li> -->
-                            <li><a href="javascript:void(document.getElementById('ifr').src='http://202.197.75.107:8080/public/php_service/panel_admin_class.php#query')"
-                                    class="link-dark rounded">管理与查询</a></li>
-                            <li><a href="javascript:void(document.getElementById('ifr').src='http://202.197.75.107:8080/public/php_service/panel_admin_class.php#add')"
-                                    class="link-dark rounded">添加课程</a></li>
-                        </ul>
-                    </div>
+                <li>
+                    <a href="http://202.197.75.107:8080/classes.php" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#table" />
+                        </svg>
+                        课程管理
+                    </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/students.html" class="nav-link link-dark">
+                    <a href="http://202.197.75.107:8080/students.php" class="nav-link link-dark">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#grid" />
                         </svg>
@@ -234,7 +177,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/scores.html" class="nav-link link-dark">
+                    <a href="http://202.197.75.107:8080/scores.php" class="nav-link link-dark">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#people-circle" />
                         </svg>
@@ -245,26 +188,20 @@
             <hr>
             <div class="dropdown">
                 <!--下方-->
-                <a href="http://202.197.75.107:8080/public/php_service/auth_query.php?session=destroy" class="nav-link link-dark">
-                    <svg class="bi me-2" width="16" height="16">
-                        <use xlink:href="#people-circle" />
-                    </svg>
-                    退出登录
-                </a>
+                    <a href="http://202.197.75.107:8080/public/php_service/auth_query.php?session=destroy" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#people-circle" />
+                        </svg>
+                        退出登录
+                    </a>
             </div>
         </div>
         <!-- <div class="b-example-divider"></div> -->
 
         <!--内容开始-->
         <div class="iframe-container">
-            <!--面板实际地址-->
-            <iframe src="http://202.197.75.107:8080/public/php_service/panel_admin_class.php" id="ifr"></iframe>
+            <iframe src="http://202.197.75.107:8080/public/php_service/panel_admin.php"></iframe>
         </div>
-
-
-
-
-
         <!--内容结束-->
     </main>
 

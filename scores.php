@@ -1,3 +1,8 @@
+<?php
+//  启动会话
+require_once './php_service/panel_auth.php';
+panel_admin_auth();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -140,7 +145,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="http://202.197.75.107:8080/home.html" class="nav-link link-dark" aria-current="page">
+                    <a href="http://202.197.75.107:8080/home.php" class="nav-link link-dark" aria-current="page">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#home" />
                         </svg>
@@ -148,7 +153,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/users.html" class="nav-link link-dark">
+                    <a href="http://202.197.75.107:8080/users.php" class="nav-link link-dark">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#speedometer2" />
                         </svg>
@@ -156,7 +161,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/classes.html" class="nav-link link-dark">
+                    <a href="http://202.197.75.107:8080/classes.php" class="nav-link link-dark">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#table" />
                         </svg>
@@ -164,7 +169,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/students.html" class="nav-link link-dark">
+                    <a href="http://202.197.75.107:8080/students.php" class="nav-link link-dark">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#grid" />
                         </svg>
@@ -172,7 +177,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://202.197.75.107:8080/scores.html" class="nav-link active">
+                    <a href="http://202.197.75.107:8080/scores.php" class="nav-link active">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#people-circle" />
                         </svg>

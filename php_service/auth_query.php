@@ -122,7 +122,7 @@ INFO;
             odbc_exec($conn, $sql);
             odbc_close($conn);
             $_SESSION["count"] = 0;
-            die("<meta http-equiv=\"refresh\" content=\"3;url=/home.html\">");
+            die("<meta http-equiv=\"refresh\" content=\"3;url=/home.php\">");
         }
         else if ($auth == 2) {
             $_SESSION["username"] = $username;
